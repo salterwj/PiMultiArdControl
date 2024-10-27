@@ -14,16 +14,16 @@ if __name__ == '__main__':
             
             print("***")
 
-            fanFile = open("/var/www/html/fanStatus.txt","r")
-            command = fanFile.read()
-            fanFile.close()
+            lightFile = open("/var/www/html/clockStatus.txt","r")
+            command = lightFile.read()
+            lightFile.close()
             
             print(line)
-            if command == 'on':
-                ser.write(b"on\n")
+            if command == 'scene change':
+                ser.write(b"scene change\n")
                 print(command)
-            elif command == 'off':
-                ser.write(b"off\n")
+            elif command == 'standard rotation':
+                ser.write(b"standard rotation\n")
                 print(command)
             else:
-                print("error")
+                print("Neutral")
